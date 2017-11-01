@@ -1,0 +1,4 @@
+1. Form validation.
+2. Showing form controls only when valid (like messages).
+3. Add or remove subscriptions.
+4. Showing all topics present.

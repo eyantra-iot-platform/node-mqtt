@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>MQTT Dash</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://unpkg.com/mqtt@2.13.1/dist/mqtt.min.js"></script>
+</head>
+<body>
+    <!-- Jumbotron header -->
+    <div class="jumbotron text-center">
+        <h1>MQTT-C</h1>
+        <h5>A browser based mqtt-client for pub/sub messaging over mosca broker.</h5>
+    </div>
+    
+    <!-- Form for subscribing to clients -->
+    <div class="container">
+        <h2>Controls</h2>
+        <hr>
+        <form class="clearfix">
+            <div class="form-group">
+                <label for="sub-topic">Subscribe to:</label>
+                <div class="row">
+                    <div class="col-auto"><input type="text" class="form-control" id="sub-topic" placeholder="Topic to subscribe"></div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary " id="sub-topic-button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pub-topic">Add a new publish topic:</label>
+                <div class="row">
+                    <div class="col-auto"><input type="email" class="form-control" id="pub-topic" placeholder="New topic to publish to">
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary " id="add-pub-topic-button">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pub-topic-option">Select publish topic:</label>
+                <select class="form-control" id="pub-topic-option">
+                    <option value="mqtt-no-topic">mqtt-no-topic</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message-body">Message body:</label>
+                <textarea class="form-control" id="message-body" rows="3" placeholder="Enter your message"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary " id="publish-topic-button">Publish</button>
+        </form>
+    </div>
+    <br/><br/>
+    <!-- Message section -->
+    <div class="container">
+        <h2>Messages</h2>
+        <hr>
+        <div id="message-div">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus consequatur beatae corporis iusto quidem deleniti molestiae molestias fugiat sunt excepturi repudiandae, ipsam cumque quod perferendis odio, commodi, sit nobis ab.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus consequatur beatae corporis iusto quidem deleniti molestiae molestias fugiat sunt excepturi repudiandae, ipsam cumque quod perferendis odio, commodi, sit nobis ab.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus consequatur beatae corporis iusto quidem deleniti molestiae molestias fugiat sunt excepturi repudiandae, ipsam cumque quod perferendis odio, commodi, sit nobis ab.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus consequatur beatae corporis iusto quidem deleniti molestiae molestias fugiat sunt excepturi repudiandae, ipsam cumque quod perferendis odio, commodi, sit nobis ab.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus consequatur beatae corporis iusto quidem deleniti molestiae molestias fugiat sunt excepturi repudiandae, ipsam cumque quod perferendis odio, commodi, sit nobis ab.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus consequatur beatae corporis iusto quidem deleniti molestiae molestias fugiat sunt excepturi repudiandae, ipsam cumque quod perferendis odio, commodi, sit nobis ab.
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

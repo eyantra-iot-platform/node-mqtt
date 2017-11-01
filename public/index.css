@@ -1,0 +1,10 @@
+body {
+    padding-bottom: 50px; 
+}
+
+#message-div {
+    background-color: darkgrey;
+    padding: 1em;
+    height: 200px;
+    overflow-y: scroll;
+}

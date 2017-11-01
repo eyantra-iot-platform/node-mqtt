@@ -1,0 +1,17 @@
+{
+  "name": "browser-mqtt",
+  "version": "1.0.0",
+  "description": "A browser based mqtt-client that shows messages of the subscribed topic and also publishes it's own info. ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Omkar Manjrekar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "mosca": "^2.7.0",
+    "mqtt": "^2.13.1"
+  }
+}
