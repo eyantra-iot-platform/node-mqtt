@@ -1,4 +1,4 @@
-let client = mqtt.connect('ws://127.0.0.1:1883');
+let client = mqtt.connect();
 
 //clientApp to reduce browser window object pollution
 //contains utility methods and data stores for client side
@@ -35,6 +35,11 @@ clientApp.publishToTopic = function() {
     }
 };
 
+client.on('message', function(topic, payload) {
+    $('#message-div').append(
+        `${topic}: ${payload.toString()}<br/>`
+    );
+});
 $('#sub-topic-button').click((e) => {
     clientApp.subscribeTopic();
 });
