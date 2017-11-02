@@ -11,7 +11,12 @@ clientApp.subscribeTopic = function() {
     if(topic!=='') {
         console.log(topic);
         client.subscribe(topic);
+        $('#sub-topic').val('');
+        $('.subscriptions').append(
+            `<button type="button" class="btn btn-outline-success">${topic}</button>&nbsp;&nbsp;`
+        );
     }
+    else alert('Enter a subscribe topic!');
 };
 
 clientApp.addPublishTopic = function() {
@@ -23,7 +28,8 @@ clientApp.addPublishTopic = function() {
         );
         $('#pub-topic').val('');
     }
-}
+    else alert('Enter a publish topic!');
+};
 
 clientApp.publishToTopic = function() {
     let publishTopic = $('#pub-topic-option').val();
@@ -32,6 +38,7 @@ clientApp.publishToTopic = function() {
         console.log(publishTopic);
         console.log(messageBody);
         client.publish(publishTopic, messageBody);
+        $('#message-body').val('');
     }
 };
 
@@ -40,6 +47,8 @@ client.on('message', function(topic, payload) {
         `${topic}: ${payload.toString()}<br/>`
     );
 });
+
+//buttons click handlers
 $('#sub-topic-button').click((e) => {
     clientApp.subscribeTopic();
 });

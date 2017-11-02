@@ -11,7 +11,7 @@ var ascoltatore = {
 };
 
 var settings = {
-	// port: 1883,
+	port: 1883,
 	backend: ascoltatore
 };
 
