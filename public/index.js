@@ -3,8 +3,18 @@ let client = mqtt.connect();
 //clientApp to reduce browser window object pollution
 //contains utility methods and data stores for client side
 let clientApp = {};
+clientApp.name = 'NoName';
 clientApp.publishList = [];
 clientApp.subscribeList = [];
+
+clientApp.saveName = function() {
+    let name = $('#user-name').val().trim() || clientApp.name;
+    if(name!==''){
+        clientApp.name = name;
+        $('#user-name-span').html(clientApp.name);
+    }
+    else alert('Enter a valid name!');
+}
 
 clientApp.subscribeTopic = function() {
     let topic = $('#sub-topic').val().trim();
@@ -37,18 +47,23 @@ clientApp.publishToTopic = function() {
     if(messageBody !== '') {
         console.log(publishTopic);
         console.log(messageBody);
-        client.publish(publishTopic, messageBody);
+        console.log(`${clientApp.name}: ${messageBody} [${publishTopic}]`);
+        client.publish(publishTopic, `${messageBody} {sent by ${clientApp.name}}`);
         $('#message-body').val('');
     }
 };
 
 client.on('message', function(topic, payload) {
     $('#message-div').append(
-        `${topic}: ${payload.toString()}<br/>`
+        `[${topic}]: ${payload.toString()}<br/>`
     );
 });
 
 //buttons click handlers
+$('#user-name-button').click((e) => {
+    clientApp.saveName();
+});
+
 $('#sub-topic-button').click((e) => {
     clientApp.subscribeTopic();
 });

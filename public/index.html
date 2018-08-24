@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="./index.css">
-    <script src="https://unpkg.com/mqtt@2.13.1/dist/mqtt.min.js"></script>
+    <script src="./mqtt.min.js"></script>
 </head>
 <body>
     <!-- Jumbotron header -->
@@ -23,6 +23,15 @@
         <h2>Controls</h2>
         <hr>
         <form class="clearfix">
+            <div class="form-group">
+                <label for="user-name">Name: <span id="user-name-span"></span></label>
+                <div class="row">
+                    <div class="col-auto"><input type="text" class="form-control" id="user-name" placeholder="Bruce Wayne"></div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary " id="user-name-button">Save</button>
+                    </div>
+                </div>
+            </div>
             <div class="form-group">
                 <label for="sub-topic">Subscribe to:</label>
                 <div class="row">
@@ -64,7 +73,7 @@
         <h2>Messages</h2>
         <hr>
         <div id="message-div">
-            See messages here: <br/>
+            See messages here: [&lt;topic&gt;]: &lt;message&gt; {&lt;user-name&gt;} <br/>
         </div>
     </div>
     <!-- Optional JavaScript -->
