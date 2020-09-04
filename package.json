@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
-    "mongodb": "^2.2.35",
+    "mongodb": "^3.1.13",
     "mosca": "^2.8.2",
     "mqtt": "^2.18.2"
   }
